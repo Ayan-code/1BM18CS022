@@ -17,17 +17,30 @@ void display(NODE head);
 void main()
 {
  NODE head;
- int a,b,c,pos;
+ int a,b,c,pos,ch;
  head=getnode();
- printf("\n Enter the element to insert at front:");
- scanf("%d",&a);
- head=ins_frn(head,a);
- printf("\n Enter the element to insert at last:");
- scanf("%d",&b);
- head=ins_back(head,b);
- printf("\n Enter the element and its position to be inserted at:");
- scanf("%d %d",&c,&pos);
- head=ins_pos(head,c,pos);
+ while(ch!=4)
+ {
+ printf("Enter your choice: 1 for insert at front \n2 for insert at back \n3 insert at position \n 4 for exit");
+ scanf("%d",&ch);
+ switch(ch)
+ {
+  case 1: printf("\n Enter the element to insert at front:");
+          scanf("%d",&a);
+          head=ins_frn(head,a);
+          break;
+  case 2: printf("\n Enter the element to insert at last:");
+          scanf("%d",&b);
+          head=ins_back(head,b);
+          break;
+  case 3: printf("\n Enter the element and its position to be inserted at:");
+          scanf("%d %d",&c,&pos);
+          head=ins_pos(head,c,pos);
+          break;
+  case 4: exit(0);
+  default: printf("\n wrong choice!!");
+ } 
+ }
  printf("\n Displaying NODES:");
  display(head);
 }
